@@ -1,4 +1,5 @@
 # 💰 Personal Finance Tracker
+![image](https://github.com/user-attachments/assets/fc98f159-db78-466d-a8e5-d1b1a3c234ae)
 
 A simple, easy-to-use personal finance tracker built using HTML, CSS, and JavaScript. It allows users to **track income and expenses**, filter and sort transactions, and even **export data as a CSV file**.
 
