@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Finance Tracker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="tracker-container">
+        <h1>💰 Personal Finance Tracker</h1>
+        <button onclick="toggleDarkMode()" id="dark-mode-btn" class="icon-btn">🌙</button>
+        
+        <div class="input-group">
+            <input type="text" id="description" placeholder="Enter transaction description...">
+            <input type="number" id="amount" placeholder="Enter amount...">
+            <input type="date" id="date" value="">
+            <select id="category">
+                <option value="salary">Salary</option>
+                <option value="freelance">Freelance</option>
+                <option value="rent">Rent</option>
+                <option value="food">Food</option>
+                <option value="transport">Transport</option>
+                <option value="other">Other</option>
+            </select>
+            <select id="type">
+                <option value="income">Income</option>
+                <option value="expense">Expense</option>
+            </select>
+            <button id="add-btn" onclick="addTransaction()">➕ Add Transaction</button>
+<button id="update-btn" onclick="addTransaction()" style="display: none; background-color: orange;">🔄 Update Transaction</button>
+
+        </div>
+
+        <h2>Transactions</h2>
+        <div class="filter-group">
+            <input type="text" id="search" placeholder="Search transactions..." onkeyup="filterTransactions()">
+            <select id="sort" onchange="sortTransactions()">
+                <option value="newest">Newest</option>
+                <option value="oldest">Oldest</option>
+                <option value="high">Highest Amount</option>
+                <option value="low">Lowest Amount</option>
+            </select>
+            <button onclick="exportTransactions()" class="export-btn">📤 Export CSV</button>
+
+        </div>
+        <ul id="transactions-list"></ul>
+<button id="undo-btn" style="display:none; background-color: #ff9800; color: white; padding: 10px; border-radius: 5px; border: none; cursor: pointer;" onclick="undoDelete()">Undo Last Delete</button>
+
+
+        <h3>Total Balance: <span id="balance">₹0.00</span></h3>
+        <h3>Monthly Summary: Income: ₹<span id="monthly-income">0.00</span> | Expenses: ₹<span id="monthly-expenses">0.00</span></h3>
+    </div>
+
+    <div id="toast" class="toast"></div>
+    <script src="script.js"></script>
+</body>
+</html>
